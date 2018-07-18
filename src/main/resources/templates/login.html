@@ -79,13 +79,14 @@
  					data:	{userid:userid, password:password},
  					
  					
- 					sucess : function(result){
- 						if(result==1){
+ 					success : function(result){
+ 						console.log(result);
+ 						if(result.result==1){
  							alert(result.msg);
- 							location.href='http://13.125.126.134:3200'
+ 							location.href='http://13.125.126.134:3200';
  						}
  						else{
- 							alert(result.msg)
+ 							alert(result.msg);
  						}
  					}
  						
