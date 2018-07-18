@@ -2,7 +2,7 @@ package net.swt.web;
 
 public class user {
 	private String userId;
-	private String passwd;
+	private String password;
 	private String name;
 	private String email;
 	public String getUserId() {
@@ -11,11 +11,11 @@ public class user {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getPasswd() {
-		return passwd;
+	public String getPassword() {
+		return password;
 	}
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
+	public void setPassword(String passwd) {
+		this.password = passwd;
 	}
 	public String getName() {
 		return name;
@@ -28,7 +28,7 @@ public class user {
 	}
 	@Override
 	public String toString() {
-		return "user [userId=" + userId + ", passwd=" + passwd + ", name=" + name + ", email=" + email + "]";
+		return "user [userId=" + userId + ", passwd=" + password + ", name=" + name + ", email=" + email + "]";
 	}
 	public void setEmail(String email) {
 		this.email = email;

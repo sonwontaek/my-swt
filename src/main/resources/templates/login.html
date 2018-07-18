@@ -37,25 +37,56 @@
 </nav>
 
 <div class="container">
-<form action="/login" method="post">
+<form class="login_send" method="post">
   <div class="form-group">
     <label for="userId">사용자아이디</label>
-    <input type="text" class="form-control" name="userId" aria-describedby="emailHelp" placeholder="userId">
+    <input type="text" class="form-control" id = "userId" name="userId" aria-describedby="emailHelp" placeholder="userId">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
+  
   <div class="form-group">
     <label for="password">Password</label>
-    <input type="password" class="form-control" name="password" placeholder="Password">
+    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
   </div>
- 
+  <input type="submit" class="btn btn-primary" value="로그인"/>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+ 	<script>
+ 		
+ 		
+ 		$(".login_send input[type=submit]").click(send);
+ 		
+ 		function send(e){
+ 			var userid = $('#userId').val();
+ 	 		var password =  $('#password').val();
+ 			console.log('click me');
+ 			e.preventDefault();	
+ 			var queryString = $(".login_send").serialize();
+ 			console.log("query: "+ queryString);
+ 			console.log(userid);
+ 	 		console.log(password);
+ 	 		
+ 			$.ajax({
+ 					type:'post',
+ 					//url:	'/insert',
+ 					url:	'http://13.125.126.134:3210/app/get/test',
+ 					data:	{userid:userid, password:password},
+ 					
+ 					
+ 					sucess : function(result){
+ 						
+ 					}
+ 						
+ 			});
+ 		}
+ 	
+ 	</script>
+ 
   </body>
 </html>
